@@ -31,16 +31,16 @@
 
 6. Run the program:
     ```
-    sh job.sh
+    sbatch job.sh
     ```
 
-**NOTE:** by default, the program will create random arrays from `2x2` to `5000x5000`, and perform `50` tests. If you are going to run the program on your pc, we recommend that you change these parameters, for example:
+**NOTE:** by default, the program will create random arrays from `2x2` to `5000x5000`, and perform `50` tests. If you are going to run the program on your pc or perform tests in APOLO, we recommend that you change these parameters, for example:
 ```
 #define N 10
 #define MIN_SIZE 2
 #define MAX_SIZE 1000
 ```
-When running the program in APOLO, you should get back the original values:
+When you run the final test of the program, you should recover the original values:
 ```
 #define N 50
 #define MIN_SIZE 2

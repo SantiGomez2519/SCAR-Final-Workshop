@@ -10,11 +10,14 @@
 int main(){
     srand((unsigned) time(NULL));
     int size = MIN_SIZE + (rand() % MAX_SIZE), iterator = 0;
+    double time_spent = 0.0;
     double A[size][size] __attribute__((aligned(64))), B[size][size] __attribute__((aligned(64))), C[size][size] __attribute__((aligned(64)));
 
     while(iterator++ < N){
         printf("Running iteration number: %d\n", iterator);
 
+        clock_t begin_time = clock();
+        
         // Start modifying here
 
         for(int i = 0; i < size; i++){
@@ -34,9 +37,13 @@ int main(){
         }
 
         // Stop modifying here
+        
+        clock_t end_time = clock();
+        time_spent += (double)(end_time - begin_time) / CLOCKS_PER_SEC;
     }
 
     printf("Size of matrices: %d \n", size);
+    printf("Running time: %f \n", (time_spent / N));
 
     return 0;
 }
