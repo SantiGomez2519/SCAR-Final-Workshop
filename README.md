@@ -1,17 +1,18 @@
-# Final Workshop
+# Final Workshop Santiago Gómez Ospina
 
 ## Contents
 - [Running](#running)
+- [Used Methods](#used-methods)
 - [Recommendations](#recommendations)
 - [Authors](#authors)
 
 ## Running
 
-1. Access APOLO in the corresponding schedule.
+1. Access APOLO.
 
 2. At a terminal, run the following command:
     ```
-    git clone https://github.com/SCAR-EAFIT/Final-Workshop
+    git clone https://github.com/SantiGomez2519/SCAR-Final-Workshop.git
     ```
 
 3. Go to the directory where you cloned the project:
@@ -26,8 +27,8 @@
 
 5. Compile the `mmm_implementation.c` file inside the bin directory:
     ```
-    gcc -o bin/mmm mmm_implementation.c
-    ```
+    gcc mmm_implementation.c -o bin/mmm -O3 -ftree-vectorize -fopenmp -mavx2
+    ``` 
 
 6. Run the program:
     ```
@@ -47,19 +48,16 @@ When you run the final test of the program, you should recover the original valu
 #define MAX_SIZE 5000
 ```
 
+## Used Methods
+
+To do the task I implement in the code concepts of parallelization and vectorization using the OpenMP API and using the flags of the GCC compiler: -03 -ftree-vectorize -mavx2 -fopenmp also optimizing the task of the matrix multiplication.
+
 ## Recommendations
-
-When you open the `mmm_implementation.c` file, you will see some comments, indicating the starting point endpoint to modify.
-
-Search for information on the Internet. Please do not rely on AI's, such as ChatGPT, Claude, or Gemini; you can use them for support, but they can also be wrong.
-
-You have your own time to access APOLO, don't forget to respect these times, because other people also need access. Before you start testing in APOLO you should test and modify the code on your pc.
-
-Create your own GitHub repository and clone it in APOLO, it will be easier for you.
 
 Always run the `job.sh` script to test the `mmm_implementation.c`.
 
 ## Authors
+- Santiago Gómez Ospina
 - Juan Manuel Gómez
 - Santiago Rodriguez
 - Santiago Neusa
